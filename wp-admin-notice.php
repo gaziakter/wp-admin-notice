@@ -17,9 +17,15 @@
 
  function wpan_admin_notices(){
     ?>
-    <div class="notice notice-success"> 
+    <div id="noticedismiss" class="notice notice-warning is-dismissible"> 
         <p>Hey! This is notice</p>
     </div>
     <?php
  }
  add_action( 'admin_notices', 'wpan_admin_notices');
+
+
+ function wpan_script_function(){
+    wp_enqueue_script( 'wpam_script', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array('jquery'), '1.0' );
+ }
+ add_action('admin_enqueue_scripts', 'wpan_script_function');
