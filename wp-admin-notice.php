@@ -16,11 +16,15 @@
  */
 
  function wpan_admin_notices(){
-    ?>
-    <div id="noticedismiss" class="notice notice-warning is-dismissible"> 
-        <p>Hey! This is notice</p>
-    </div>
-    <?php
+   global $pagenow;
+   if("indext.php"== $pagenow ) {
+      ?>
+      <div id="noticedismiss" class="notice notice-warning is-dismissible"> 
+          <p>Hey! This is notice</p>
+      </div>
+      <?php
+   }
+
  }
  add_action( 'admin_notices', 'wpan_admin_notices');
 
